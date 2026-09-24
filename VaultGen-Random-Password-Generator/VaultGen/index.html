@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080b16" />
+  <title>VaultGen — Random Password Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">V</div>
+        <div>
+          <h1>Vault<span>Gen</span></h1>
+          <p>Secure Password Studio</p>
+        </div>
+      </div>
+      <div class="security-pill"><i></i> LOCAL • PRIVATE</div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">PASSWORD GENERATOR</span>
+        <h2>Build a password<br><strong>worth trusting.</strong></h2>
+        <p>Create strong, customizable passwords instantly. Everything runs locally in your browser.</p>
+        <div class="hero-stats">
+          <span><b>01</b> Choose</span>
+          <span><b>02</b> Generate</span>
+          <span><b>03</b> Copy</span>
+        </div>
+      </div>
+
+      <section class="card password-card" aria-label="Password generator">
+        <div class="card-glow"></div>
+        <div class="card-head">
+          <div>
+            <p class="mini-label">GENERATED PASSWORD</p>
+            <h3>Your secure key</h3>
+          </div>
+          <span id="strengthBadge" class="strength-badge">READY</span>
+        </div>
+
+        <div class="password-output">
+          <code id="password">Generate a password</code>
+          <button id="copyBtn" class="icon-btn" title="Copy password" aria-label="Copy password">⧉</button>
+        </div>
+        <div class="copy-message" id="copyMessage"></div>
+
+        <div class="strength-wrap">
+          <div class="strength-track"><span id="strengthBar"></span></div>
+          <div class="strength-row">
+            <span>Strength</span><strong id="strengthText">—</strong>
+          </div>
+        </div>
+
+        <div class="control-section">
+          <div class="section-title">
+            <span>01</span><h4>Password length</h4><strong id="lengthValue">16</strong>
+          </div>
+          <input id="length" type="range" min="4" max="64" value="16" />
+          <div class="range-labels"><span>4</span><span>64</span></div>
+        </div>
+
+        <div class="control-section">
+          <div class="section-title"><span>02</span><h4>Character types</h4></div>
+          <div class="options">
+            <label class="option active">
+              <input type="checkbox" id="uppercase" checked />
+              <span class="fake-check">✓</span>
+              <span><b>Uppercase</b><small>A — Z</small></span>
+            </label>
+            <label class="option active">
+              <input type="checkbox" id="lowercase" checked />
+              <span class="fake-check">✓</span>
+              <span><b>Lowercase</b><small>a — z</small></span>
+            </label>
+            <label class="option active">
+              <input type="checkbox" id="numbers" checked />
+              <span class="fake-check">✓</span>
+              <span><b>Numbers</b><small>0 — 9</small></span>
+            </label>
+            <label class="option active">
+              <input type="checkbox" id="symbols" checked />
+              <span class="fake-check">✓</span>
+              <span><b>Symbols</b><small>! @ # $ %</small></span>
+            </label>
+          </div>
+        </div>
+
+        <button id="generateBtn" class="generate-btn">
+          <span class="spark">✦</span> Generate secure password <span>↗</span>
+        </button>
+        <p class="privacy-note">🔒 No password is sent to a server.</p>
+      </section>
+    </section>
+
+    <footer>
+      <span>VaultGen v1.0</span>
+      <span>Built with HTML5 • CSS3 • JavaScript</span>
+      <span>Web Crypto API</span>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
